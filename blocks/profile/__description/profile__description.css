@@ -1,0 +1,18 @@
+.profile__description {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  color: white;
+  font-style: normal;
+  margin: 16px 0 0;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__description {
+    font-size: 14px;
+    margin: 14px 0 36px;
+    justify-self: center;
+    grid-column: 1 / span 2;
+  }
+}

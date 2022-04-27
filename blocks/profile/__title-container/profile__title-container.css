@@ -1,0 +1,8 @@
+.profile__title-container {
+  display: grid;
+  max-width: 380px;
+  grid-template-areas: "profile__title profile__edit-btn"
+                       "profile__description profile__description";
+  grid-row: 16px;
+  align-items: flex-end;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="root">
+  <section class="header">
+    <img class="header__logo" src="images/logo-1.svg" alt="Логотип Mesto">
+  </section>
+  <section class="profile">
+    <div class="profile__container-custo">
+      <img class="profile__avatar" src="images/image.jpg" alt="Аватар профиля">
+      <div class="profile__title-container">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__edit-btn" name="edit" value="Edit Button">
+          <img class="profile__edit-img" src="images/Pencil.png" alt="Иконка редактирования">
+        </button>
+        <p class="profile__description">Исследователь океана</p>
+      </div>
+    </div>
+    <div class="profile__container-btn">
+      <button class="profile__add-btn" name="add" value="Add Button">
+        <img src="images/Plus.png" alt="Иконка добавления">
+      </button>
+    </div>
+  </section>
+  <section class="elements">
+    <div class="element">
+      <img class="element__image" src="images/kirill-pershin-1088404-unsplash.jpg" alt="Сентинский храм">
+      <div class="element__caption-container">
+        <h2 class="element__title">Карачаевск</h2>
+        <button class="element__like-btn" name="like" value="Like Button"></button>
+      </div>
+    </div>
+    <div class="element">
+      <img class="element__image" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Эльбрус">
+      <div class="element__caption-container">
+        <h2 class="element__title">Гора Эльбрус</h2>
+        <button class="element__like-btn" name="like" value="Like Button"></button>
+      </div>
+    </div>
+    <div class="element">
+      <img class="element__image" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
+      <div class="element__caption-container">
+        <h2 class="element__title">Домбай</h2>
+        <button class="element__like-btn" name="like" value="Like Button"></button>
+      </div>
+    </div>
+    <div class="element">
+      <img class="element__image" src="images/pexels-photo-8562990.jpeg" alt="Чегет">
+      <div class="element__caption-container">
+        <h2 class="element__title">Чегет</h2>
+        <button class="element__like-btn" name="like" value="Like Button"></button>
+      </div>
+    </div>
+    <div class="element">
+      <img class="element__image" src="images/69681561.jpeg" alt="Приэльбрусье пейзаж">
+      <div class="element__caption-container">
+        <h2 class="element__title">Приэльбрусье</h2>
+        <button class="element__like-btn" name="like" value="Like Button"></button>
+      </div>
+    </div>
+    <div class="element">
+      <img class="element__image" src="images/pexels-photo-8808347.jpeg" alt="Природа Карачаево-Черкесии">
+      <div class="element__caption-container">
+        <h2 class="element__title">Карачаево-Черкесия</h2>
+        <button class="element__like-btn" name="like" value="Like Button"></button>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <p class="footer__copyright">© 2020 Mesto Russia</p>
+  </section>
+  <div class="popup popup_hidden">
+    <div class="popup__container">
+      <button class="popup__close-btn" type="button"><img class="popup__close-img" src="images/CloseIcon.png" alt="Крестик"></button>
+      <form class="popup__form" name="popup" action="#">
+        <p class="popup__title">Редактировать профиль</p>
+        <input class="popup__input popup__input-name" value = "Жак-Ив Кусто" placeholder="Имя" id="names" required="" type="text">
+        <input class="popup__input popup__input-description" value = "Исследователь океана" placeholder="О себе" id="description" required="" type="text">
+        <button type="submit" class="popup__save-button">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="scripts/script.js"></script> 
+</body>
+</html>

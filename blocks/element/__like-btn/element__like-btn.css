@@ -1,0 +1,16 @@
+.element__like-btn {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  background-position: center;
+  transition: 0.1s linear;
+  background-image: url(../../../images/Vector.png);
+  background-repeat: no-repeat;
+  min-width: 23px;
+  min-height: 19px;
+  padding: 0;
+}
+
+.element__like-btn:hover {
+  opacity: 60%;
+}
