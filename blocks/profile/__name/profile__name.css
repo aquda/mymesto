@@ -5,8 +5,8 @@
   color: white;
   font-style: normal;
   margin: 0;
-  text-overflow: ellipsis;   
-  white-space: nowrap;   
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 }
 
