@@ -5,8 +5,9 @@
   color: #545454;
 }
 
-@media (min-width: 901px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .footer__copyright {
     font-size: 14px;
+    line-height: 17px;
   }
 }

@@ -4,13 +4,13 @@
   cursor: pointer;
   background-position: center;
   transition: 0.1s linear;
-  background-image: url(../../../images/Vector.png);
+  background-image: url(../../../images/heartactive.svg);
   background-repeat: no-repeat;
-  min-width: 23px;
+  min-width: 22px;
   min-height: 19px;
   padding: 0;
 }
 
 .element__like-btn:hover {
-  opacity: 60%;
+  opacity: 0.5;
 }
