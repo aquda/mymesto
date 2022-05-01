@@ -9,6 +9,8 @@ let profileDescription = document.querySelector(".profile__description");
 let inputDescription = document.querySelector("#input-dscr");
 
 function openPopup() {
+  inputName.value = profileName.textContent;
+  inputDescription.value = profileDescription.textContent;
   popup.classList.add("popup_open");
 }
 
