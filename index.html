@@ -26,46 +26,52 @@
   </section>
   <section class="elements">
     <article class="element">
-      <img class="element__image" src="images/kirill-pershin-1088404-unsplash.jpg" alt="Сентинский храм">
+      <img class="element__image" src="images/Image1.jpg" alt="Карачаевск">
       <div class="element__caption-container">
         <h2 class="element__title">Карачаевск</h2>
         <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
       </div>
+      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
     </article>
     <article class="element">
-      <img class="element__image" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Эльбрус">
+      <img class="element__image" src="images/photo-1578057952650-6dfd20f64c5d.jpg" alt="Гора Эльбрус">
       <div class="element__caption-container">
         <h2 class="element__title">Гора Эльбрус</h2>
         <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
       </div>
+      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
     </article>
     <article class="element">
-      <img class="element__image" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
+      <img class="element__image" src="images/photo-1617911478446-c7f1dd96966e.jpg" alt="Домбай">
       <div class="element__caption-container">
         <h2 class="element__title">Домбай</h2>
         <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
       </div>
+      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
     </article>
     <article class="element">
-      <img class="element__image" src="images/pexels-photo-8562990.jpeg" alt="Чегет">
+      <img class="element__image" src="images/photo-1577978728453-3d444d6f96da.jpg" alt="Чегет">
       <div class="element__caption-container">
         <h2 class="element__title">Чегет</h2>
         <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
       </div>
+      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
     </article>
     <article class="element">
-      <img class="element__image" src="images/69681561.jpeg" alt="Приэльбрусье пейзаж">
+      <img class="element__image" src="images/photo-1622381638713-64bc713d8f48.jpg" alt="Приэльбрусье">
       <div class="element__caption-container">
         <h2 class="element__title">Приэльбрусье</h2>
         <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
       </div>
+      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
     </article>
     <article class="element">
-      <img class="element__image" src="images/pexels-photo-8808347.jpeg" alt="Природа Карачаево-Черкесии">
+      <img class="element__image" src="images/photo-1588584922681-745a2223f72c.jpg" alt="Карачаево-Черкесия">
       <div class="element__caption-container">
         <h2 class="element__title">Карачаево-Черкесия</h2>
         <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
       </div>
+      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
     </article>
   </section>
   <footer class="footer">
@@ -82,7 +88,37 @@
       </form>
     </div>
   </div>
-  <script src="scripts/script.js"></script> 
+  <div class="popup popup_card">
+  </div>
+    <template id="popup_add">
+        <div class="popup__container">
+          <button class="popup__close-btn popup__unshow-btn" type="button"><img class="popup__close-img" src="images/Close.svg" alt="Крестик"></button>
+          <form class="popup__form popup_new-place" name="popup" action="#">
+            <h3 class="popup__title">Новое место</h3>
+              <input class="popup__input" value = "" placeholder="Название" id="input-title" required="" type="text" name = "Title">
+              <input class="popup__input" value = "" placeholder="Ссылка на картинку" id="input-img" type="src" name = "Image">
+            <button type="submit" class="popup__save-button popup__create-button">Создать</button>
+          </form>
+        </div>
+    </template>
+    <section class="popup popup_modal">
+      <figure class="popup__view">
+      <button class="popup__close-btn popup__hide-btn" type="button"><img class="popup__close-img" src="images/Close.svg" alt="Крестик"></button>
+      <img class="popup__image" src="" alt="">
+      <figcaption class="popup__caption"></figcaption>
+    </figure>
+    </section>
+    <template id="card_template">
+      <article class="element card-element">
+        <img class="element__image element__image-empty" src="" alt="">
+        <div class="element__caption-container">
+          <h2 class="element__title element__title-empty"></h2>
+          <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
+        </div>
+        <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
+      </article>
+  </template>
+  <script src="scripts/script.js"></script>
 </main>
 </body>
 </html>
