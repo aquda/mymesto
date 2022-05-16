@@ -77,7 +77,7 @@
   <footer class="footer">
     <p class="footer__copyright">© 2020 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <section class="popup popup_info">
     <div class="popup__container">
       <button class="popup__close-btn" type="button"><img class="popup__close-img" src="images/Close.svg" alt="Крестик"></button>
       <form class="popup__form" name="popup" action="#">
@@ -87,28 +87,26 @@
         <button type="submit" class="popup__save-button">Сохранить</button>
       </form>
     </div>
-  </div>
-  <div class="popup popup_card">
-  </div>
-    <template id="popup_add">
-        <div class="popup__container">
-          <button class="popup__close-btn popup__unshow-btn" type="button"><img class="popup__close-img" src="images/Close.svg" alt="Крестик"></button>
-          <form class="popup__form popup_new-place" name="popup" action="#">
-            <h3 class="popup__title">Новое место</h3>
-              <input class="popup__input" value = "" placeholder="Название" id="input-title" required="" type="text" name = "Title">
-              <input class="popup__input" value = "" placeholder="Ссылка на картинку" id="input-img" type="src" name = "Image">
-            <button type="submit" class="popup__save-button popup__create-button">Создать</button>
-          </form>
-        </div>
-    </template>
-    <section class="popup popup_modal">
-      <figure class="popup__view">
-      <button class="popup__close-btn popup__hide-btn" type="button"><img class="popup__close-img" src="images/Close.svg" alt="Крестик"></button>
+  </section>
+  <section class="popup popup_add">
+    <div class="popup__container">
+      <button class="popup__close-btn" type="button"><img class="popup__close-img" src="images/Close.svg" alt="Крестик"></button>
+      <form class="popup__form popup_new-place" name="popup" action="#">
+        <h3 class="popup__title">Новое место</h3>
+        <input class="popup__input" value = "" placeholder="Название" id="input-title" required="" type="text" name = "Title">
+        <input class="popup__input" value = "" placeholder="Ссылка на картинку" id="input-img" type="src" name = "Image">
+        <button type="submit" class="popup__save-button popup__create-button">Создать</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup_modal">
+    <figure class="popup__view">
+      <button class="popup__close-btn" type="button"><img class="popup__close-img" src="images/Close.svg" alt="Крестик"></button>
       <img class="popup__image" src="#" alt="">
       <figcaption class="popup__caption"></figcaption>
     </figure>
-    </section>
-    <template id="card_template">
+  </section>
+    <template class="card-template">
       <article class="element card-element">
         <img class="element__image element__image-empty" src="#" alt="">
         <div class="element__caption-container">
