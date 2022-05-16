@@ -18,7 +18,7 @@ const likeButton = document.querySelectorAll(".element__like-btn");
 const deleteButton = document.querySelectorAll(".element__delete-btn");
 // попап добавления картинок
 const popupAdd = document.querySelector(".popup_add");
-const formAdd = document.querySelector(".popup_place");
+const formAdd = document.querySelector(".popup_form-place");
 const cardAddPopupCloseButton = popupAdd.querySelector(".popup__close-btn");
 // шаблон карточки
 const template = document.querySelector(".card-template").content;
