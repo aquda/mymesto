@@ -52,14 +52,14 @@ closeButton.addEventListener("click", function(evt) {
 
 // сохранить изменения
 
-function popupFullfill(ev) {
+function fullfillPopup(ev) {
   ev.preventDefault();
   profileName.textContent = inputName.value;
   profileDescription.textContent = inputDescription.value;
   closePopup(popupInfo);
 }
 
-popupForm.addEventListener("submit", popupFullfill);
+popupForm.addEventListener("submit", fullfillPopup);
 
 // добавление карточек из массива
 
@@ -171,7 +171,7 @@ function renderCard(card) {
   cards.prepend(card);
 }
 
-function formCreation(evt) {
+function createForm(evt) {
   evt.preventDefault();
   const cardNew = addElement({name: inputTitle.value, link: inputImg.value});
   renderCard(cardNew);
@@ -179,7 +179,7 @@ function formCreation(evt) {
   formAdd.reset();
 }
 
-formAdd.addEventListener("submit", formCreation);
+formAdd.addEventListener("submit", createForm);
 
 // открытие и закрытие попапа для добавления карточек
 
