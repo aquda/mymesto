@@ -1,8 +1,7 @@
 const editButton = document.querySelector(".profile__edit-btn");
 let profileName = document.querySelector(".profile__name");
 // универсальные для всех попапов
-const popup = document.querySelector(".popup");
-const closeButton = document.querySelector(".popup__close-btn");
+const popupEditCloseButton = document.querySelector(".popup__close-btn");
 const popupForm = document.querySelector(".popup__form");
 // все инпуты
 let inputName = document.querySelector("#input-name");
@@ -11,14 +10,14 @@ let inputTitle = document.querySelector("#input-title");
 let inputImg = document.querySelector("#input-img");
 // поле информации об аккаунте
 let profileDescription = document.querySelector(".profile__description");
-const addButton = document.querySelector(".profile__add-btn");
+const cardAddButton = document.querySelector(".profile__add-btn");
 // карточка
-const cards = document.querySelector('.elements');
+const cardElement = document.querySelector('.elements');
 const likeButton = document.querySelectorAll(".element__like-btn");
-const deleteButton = document.querySelectorAll(".element__delete-btn");
+const cardDeleteButton = document.querySelectorAll(".element__delete-btn");
 // попап добавления картинок
 const popupAdd = document.querySelector(".popup_add");
-const formAdd = document.querySelector(".popup_form-place");
+const formAdd = document.querySelector(".popup__form-place");
 const cardAddPopupCloseButton = popupAdd.querySelector(".popup__close-btn");
 // шаблон карточки
 const template = document.querySelector(".card-template").content;
@@ -46,7 +45,7 @@ function closePopup(item) {
   item.classList.remove("popup_open");
 }
 
-closeButton.addEventListener("click", function(evt) {
+popupEditCloseButton.addEventListener("click", function(evt) {
   closePopup(popupInfo);
 })
 
@@ -60,35 +59,6 @@ function fullfillPopup(ev) {
 }
 
 popupForm.addEventListener("submit", fullfillPopup);
-
-// добавление карточек из массива
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-]; 
 
 // общая функция лайка
 
@@ -110,7 +80,7 @@ function removeCard(evt) {
 
 //ремув для изначальных карточек 
 
-deleteButton.forEach(item => {
+cardDeleteButton.forEach(item => {
   item.addEventListener("click", removeCard)
 })
 
@@ -168,7 +138,7 @@ function addElement(item) {
 }
 
 function renderCard(card) {
-  cards.prepend(card);
+  cardElement.prepend(card);
 }
 
 function createForm(evt) {
@@ -183,7 +153,7 @@ formAdd.addEventListener("submit", createForm);
 
 // открытие и закрытие попапа для добавления карточек
 
-addButton.addEventListener("click", function(evt) {
+cardAddButton.addEventListener("click", function(evt) {
   openPopup(popupAdd);
  })
 
