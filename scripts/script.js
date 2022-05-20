@@ -1,15 +1,15 @@
 const editButton = document.querySelector(".profile__edit-btn");
-let profileName = document.querySelector(".profile__name");
+const profileName = document.querySelector(".profile__name");
 // универсальные для всех попапов
 const popupEditCloseButton = document.querySelector(".popup__close-btn");
 const popupForm = document.querySelector(".popup__form");
 // все инпуты
-let inputName = document.querySelector("#input-name");
-let inputDescription = document.querySelector("#input-dscr");
-let inputTitle = document.querySelector("#input-title");
-let inputImg = document.querySelector("#input-img");
+const inputName = document.querySelector("#input-name");
+const inputDescription = document.querySelector("#input-dscr");
+const inputTitle = document.querySelector("#input-title");
+const inputImg = document.querySelector("#input-img");
 // поле информации об аккаунте
-let profileDescription = document.querySelector(".profile__description");
+const profileDescription = document.querySelector(".profile__description");
 const cardAddButton = document.querySelector(".profile__add-btn");
 // карточка
 const cardElement = document.querySelector('.elements');
