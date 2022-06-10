@@ -2,12 +2,12 @@ const editButton = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");
 // универсальные для всех попапов
 const popupEditCloseButton = document.querySelector(".popup__close-btn");
-const popupForm = document.querySelector(".popup__form");
+const popupForm = document.querySelector(".popup__form-edit");
 // все инпуты
-const inputName = document.querySelector("#input-name");
-const inputDescription = document.querySelector("#input-dscr");
-const inputTitle = document.querySelector("#input-title");
-const inputImg = document.querySelector("#input-img");
+const inputName = document.querySelector("#profile-name");
+const inputDescription = document.querySelector("#profile-description");
+const inputTitle = document.querySelector("#add-title");
+const inputImg = document.querySelector("#add-image");
 // поле информации об аккаунте
 const profileDescription = document.querySelector(".profile__description");
 const cardAddButton = document.querySelector(".profile__add-btn");
@@ -23,11 +23,37 @@ const cardAddPopupCloseButton = popupAdd.querySelector(".popup__close-btn");
 const template = document.querySelector(".card-template").content;
 // попап с редактированием информации
 const popupInfo = document.querySelector(".popup_info");
+// попапы и их контейнеры
+const popupProfileContainer = document.querySelector(".popup__edit-container");
+const popupAddContainer = document.querySelector(".popup__add-container");
+const popupFormProfile = popupProfileContainer.querySelector(".popup__form");
+const popupFormAdd = popupAddContainer.querySelector(".popup__form");
 
-// открыть попап с редактированием информации
+
+// открыть попап 
 function openPopup (item) {
   item.classList.add("popup_open");
+  document.addEventListener("keydown", closePopupEsc);
 }
+
+// закрыть попап
+function closePopup(item) {
+  item.classList.remove("popup_open");
+  document.removeEventListener("keydown", closePopupEsc);
+}
+
+const popupList = document.querySelectorAll(".popup");
+
+// закрыть попап Esc
+function closePopupEsc(evt) {
+  const key = evt.keyCode;
+  if (key === 27) {
+    const openedPopup = document.querySelector('.popup_open');
+    closePopup(openedPopup);
+    }
+  }
+
+
 
 // заполнить поля попапа
 function keepAddPopup() {
@@ -39,11 +65,6 @@ editButton.addEventListener("click", function(evt) {
   openPopup(popupInfo);
   keepAddPopup();
  })
-
-// закрыть попап с редактированием информации
-function closePopup(item) {
-  item.classList.remove("popup_open");
-}
 
 popupEditCloseButton.addEventListener("click", function(evt) {
   closePopup(popupInfo);
@@ -99,6 +120,22 @@ modalPopupCloseButton.addEventListener("click", function(evt) {
   closePopup(popupModal);
 })
 
+//
+
+function closePopupOverlay(evt) {
+  if(evt.target === evt.currentTarget) {
+    closePopup(evt.currentTarget);
+  }
+}
+
+popupModal.addEventListener('mousedown', closePopupOverlay);
+popupAdd.addEventListener('mousedown', closePopupOverlay);
+popupInfo.addEventListener('mousedown', closePopupOverlay);
+
+
+
+
+//
 image.forEach(item => {
   item.addEventListener("click", function(event){
   openPopup(popupModal);
