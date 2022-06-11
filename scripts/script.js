@@ -28,34 +28,33 @@ const popupProfileContainer = document.querySelector(".popup__edit-container");
 const popupAddContainer = document.querySelector(".popup__add-container");
 const popupFormProfile = popupProfileContainer.querySelector(".popup__form");
 const popupFormAdd = popupAddContainer.querySelector(".popup__form");
+const popupList = document.querySelectorAll(".popup");
+const buttonAddSubmit = popupFormAdd.querySelector('.popup__save-button');
 
 
-// открыть попап 
-function openPopup (item) {
-  item.classList.add("popup_open");
+/** добавление функции открытия попапа */
+function openPopup (popup) {
+  popup.classList.add("popup_open");
   document.addEventListener("keydown", closePopupEsc);
 }
 
-// закрыть попап
-function closePopup(item) {
-  item.classList.remove("popup_open");
+/** добавление функции закрытия попапа */
+function closePopup(popup) {
+  popup.classList.remove("popup_open");
   document.removeEventListener("keydown", closePopupEsc);
 }
 
-const popupList = document.querySelectorAll(".popup");
-
-// закрыть попап Esc
+/** добавление функции закрытия попапа с Esc */
 function closePopupEsc(evt) {
   const key = evt.keyCode;
-  if (key === 27) {
+  const escape = 27;
+  if (key === escape) {
     const openedPopup = document.querySelector('.popup_open');
     closePopup(openedPopup);
     }
-  }
+}
 
-
-
-// заполнить поля попапа
+/** автоматическое заполнение полей попапа */
 function keepAddPopup() {
   inputName.value = profileName.textContent;
   inputDescription.value = profileDescription.textContent;
@@ -70,7 +69,7 @@ popupEditCloseButton.addEventListener("click", function(evt) {
   closePopup(popupInfo);
 })
 
-// сохранить изменения
+/** применение изменений */
 
 function fullfillPopup(ev) {
   ev.preventDefault();
@@ -81,46 +80,32 @@ function fullfillPopup(ev) {
 
 popupForm.addEventListener("submit", fullfillPopup);
 
-// общая функция лайка
+/** добавление общей функции лайка */
 
 function toggleLike(evt) {
-  evt.target.closest('.element__like-btn').classList.toggle("element__like-btn_active");
+  evt.target.classList.toggle("element__like-btn_active");
 }
 
-//лайк для изначальных карточек 
-
-likeButton.forEach(item => {
-  item.addEventListener("click", toggleLike)
-})
-
-// общая функция ремува
+/** добавление общей функции ремува */
 
 function removeCard(evt) {
-  evt.target.closest('.element').style.display = "none";
+  evt.target.closest('.element').remove();
 }
 
-//ремув для изначальных карточек 
+/** создание модального окна для изображений */
 
-cardDeleteButton.forEach(item => {
-  item.addEventListener("click", removeCard)
-})
-
-// создание модального окна для изображений
-
-const popupModal = document.querySelector(".popup_modal"); 
-const image = document.querySelectorAll(".element__image");
+const popupFullView = document.querySelector(".popup_modal"); 
+const imageElement = document.querySelectorAll(".element__image");
 const modalImage = document.querySelector(".popup__image");
 const elementText = document.querySelectorAll(".element__title");
 const modalTitle = document.querySelector(".popup__caption");
-const modalPopupCloseButton = popupModal.querySelector(".popup__close-btn");
+const modalPopupCloseButton = popupFullView.querySelector(".popup__close-btn");
 
 // функция для существующих карточек
 
 modalPopupCloseButton.addEventListener("click", function(evt) {
-  closePopup(popupModal);
+  closePopup(popupFullView);
 })
-
-//
 
 function closePopupOverlay(evt) {
   if(evt.target === evt.currentTarget) {
@@ -128,21 +113,9 @@ function closePopupOverlay(evt) {
   }
 }
 
-popupModal.addEventListener('mousedown', closePopupOverlay);
+popupFullView.addEventListener('mousedown', closePopupOverlay);
 popupAdd.addEventListener('mousedown', closePopupOverlay);
 popupInfo.addEventListener('mousedown', closePopupOverlay);
-
-
-
-
-//
-image.forEach(item => {
-  item.addEventListener("click", function(event){
-  openPopup(popupModal);
-  modalImage.src = item.src;
-  modalTitle.textContent = item.alt;
-});
-})
 
 //универсальная функция добавления карточек
 
@@ -159,18 +132,19 @@ function addElement(item) {
   const cardLike = cardTemplate.querySelector(".element__like-btn");
   const name = item.name;
   const link = item.link;
+
   cardImg.addEventListener('click', function(evt) {
-    openPopup(popupModal);
+    openPopup(popupFullView);
     modalImage.src = cardImg.src;
     modalImage.alt = cardTitle.textContent;
     modalTitle.textContent =  modalImage.alt;
   });
 
-  cardLike.addEventListener('click', toggleLike);
-  cardRemove.addEventListener('click', removeCard);
   cardImg.src = link;
   cardImg.alt = name;
   cardTitle.textContent = name;
+  cardLike.addEventListener('click', toggleLike);
+  cardRemove.addEventListener('click', removeCard);
   return cardTemplate;
 }
 
@@ -182,8 +156,9 @@ function createForm(evt) {
   evt.preventDefault();
   const cardNew = addElement({name: inputTitle.value, link: inputImg.value});
   renderCard(cardNew);
-  closePopup(popupAdd);
   formAdd.reset();
+  disableButton(buttonAddSubmit, config);
+  closePopup(popupAdd);
 }
 
 formAdd.addEventListener("submit", createForm);

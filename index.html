@@ -25,54 +25,6 @@
     <button class="profile__add-btn" aria-label="Добавить" type="button" name="add" value="Add Button"></button>
   </section>
   <section class="elements">
-    <article class="element">
-      <img class="element__image" src="images/Image1.jpg" alt="Карачаевск">
-      <div class="element__caption-container">
-        <h2 class="element__title">Карачаевск</h2>
-        <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
-      </div>
-      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
-    </article>
-    <article class="element">
-      <img class="element__image" src="images/photo-1578057952650-6dfd20f64c5d.jpg" alt="Гора Эльбрус">
-      <div class="element__caption-container">
-        <h2 class="element__title">Гора Эльбрус</h2>
-        <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
-      </div>
-      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
-    </article>
-    <article class="element">
-      <img class="element__image" src="images/photo-1617911478446-c7f1dd96966e.jpg" alt="Домбай">
-      <div class="element__caption-container">
-        <h2 class="element__title">Домбай</h2>
-        <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
-      </div>
-      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
-    </article>
-    <article class="element">
-      <img class="element__image" src="images/photo-1577978728453-3d444d6f96da.jpg" alt="Чегет">
-      <div class="element__caption-container">
-        <h2 class="element__title">Чегет</h2>
-        <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
-      </div>
-      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
-    </article>
-    <article class="element">
-      <img class="element__image" src="images/photo-1622381638713-64bc713d8f48.jpg" alt="Приэльбрусье">
-      <div class="element__caption-container">
-        <h2 class="element__title">Приэльбрусье</h2>
-        <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
-      </div>
-      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
-    </article>
-    <article class="element">
-      <img class="element__image" src="images/photo-1588584922681-745a2223f72c.jpg" alt="Карачаево-Черкесия">
-      <div class="element__caption-container">
-        <h2 class="element__title">Карачаево-Черкесия</h2>
-        <button class="element__like-btn" type="button" name="like" value="Like Button"></button>
-      </div>
-      <button class="element__delete-btn" type="button" name="delete" value="Delete Button"></button>
-    </article>
   </section>
   <footer class="footer">
     <p class="footer__copyright">© 2020 Mesto Russia</p>
@@ -83,9 +35,9 @@
       <form class="popup__form popup__form-edit" name="popup" action="#" novalidate>
         <h3 class="popup__title">Редактировать профиль</h3>
         <input class="popup__input" value = " " placeholder="Имя" id="profile-name" required type="text" name="popup__input_type_name" minlength="2" maxlength="40">
-        <span class="popup__input-error popup__input-error-profile-name"></span>
+        <span class="popup__input-error profile-name-error"></span>
         <input class="popup__input" value = " " placeholder="О себе" id="profile-description" required type="text" name="popup__input_type_info" minlength="2" maxlength="200">
-        <span class="popup__input-error popup__input-error-profile-description"></span>
+        <span class="popup__input-error profile-description-error"></span>
         <button type="submit" class="popup__save-button">Сохранить</button>
       </form>
     </div>
@@ -96,9 +48,9 @@
       <form class="popup__form popup__form-place" novalidate>
         <h3 class="popup__title">Новое место</h3>
         <input class="popup__input" value = "" placeholder="Название" id="add-title" required type="text" name="popup__input_type_title" minlength="2" maxlength="30">
-        <span class="popup__input-error popup__input-error-add-title"></span>
+        <span class="popup__input-error add-title-error"></span>
         <input class="popup__input" value = "" placeholder="Ссылка на картинку" id="add-image" type="url" name ="popup__input_type_img" required>
-        <span class="popup__input-error popup__input-error-add-image"></span>
+        <span class="popup__input-error add-image-error"></span>
         <button type="submit" class="popup__save-button">Создать</button>
       </form>
     </div>

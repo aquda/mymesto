@@ -1,12 +1,21 @@
+const config = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_on'
+}
+
 const showInputError = (formElement, inputElement, errorMessage, config) => {
-  const errorElement = formElement.querySelector(`.popup__input-error-${inputElement.id}`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.textContent = errorMessage;
   inputElement.classList.add(config.inputErrorClass);
   errorElement.classList.add(config.errorClass);
 };
 
 const hideInputError = (formElement, inputElement, config) => {
-  const errorElement = formElement.querySelector(`.popup__input-error-${inputElement.id}`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(config.inputErrorClass);
   errorElement.classList.remove(config.errorClass);
   errorElement.textContent = '';
@@ -27,6 +36,14 @@ const hasInvalidInput = (inputList) => {
     return !inputElement.validity.valid;
   });
 };
+
+
+// сделать кнопку неактивной
+
+function disableButton(buttonElement, config) {
+  buttonElement.disabled = true;
+  buttonElement.classList.add(config.inactiveButtonClass);
+}
 
 //определение стиля кнопки и её состояния
 const toggleButtonState = (inputList, buttonElement, config) => {
@@ -64,11 +81,4 @@ const enableValidation = (config) => {
   });
 };
   
-enableValidation({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__save-button',
-    inactiveButtonClass: 'popup__save-button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error_on'
-});
+enableValidation(config);
