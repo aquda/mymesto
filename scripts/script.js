@@ -13,8 +13,6 @@ const profileDescription = document.querySelector(".profile__description");
 const cardAddButton = document.querySelector(".profile__add-btn");
 // карточка
 const cardElement = document.querySelector('.elements');
-const likeButton = document.querySelectorAll(".element__like-btn");
-const cardDeleteButton = document.querySelectorAll(".element__delete-btn");
 // попап добавления картинок
 const popupAdd = document.querySelector(".popup_add");
 const formAdd = document.querySelector(".popup__form-place");
@@ -30,6 +28,7 @@ const popupFormProfile = popupProfileContainer.querySelector(".popup__form");
 const popupFormAdd = popupAddContainer.querySelector(".popup__form");
 const popupList = document.querySelectorAll(".popup");
 const buttonAddSubmit = popupFormAdd.querySelector('.popup__save-button');
+const ESCAPE_KEYCODE = 27;
 
 
 /** добавление функции открытия попапа */
@@ -47,8 +46,7 @@ function closePopup(popup) {
 /** добавление функции закрытия попапа с Esc */
 function closePopupEsc(evt) {
   const key = evt.keyCode;
-  const escape = 27;
-  if (key === escape) {
+  if (key === ESCAPE_KEYCODE) {
     const openedPopup = document.querySelector('.popup_open');
     closePopup(openedPopup);
     }
@@ -100,8 +98,6 @@ const modalImage = document.querySelector(".popup__image");
 const elementText = document.querySelectorAll(".element__title");
 const modalTitle = document.querySelector(".popup__caption");
 const modalPopupCloseButton = popupFullView.querySelector(".popup__close-btn");
-
-// функция для существующих карточек
 
 modalPopupCloseButton.addEventListener("click", function(evt) {
   closePopup(popupFullView);
